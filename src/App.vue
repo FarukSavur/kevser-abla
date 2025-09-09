@@ -18,7 +18,7 @@ import Footer from './components/Footer.vue'
       <PricingSection />
       <InstructorsSection />
       <TestimonialsSection />
-      <ContactSection />
+      <!-- <ContactSection /> -->
     </main>
     <Footer />
   </div>
