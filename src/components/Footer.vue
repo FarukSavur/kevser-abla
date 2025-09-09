@@ -1,13 +1,26 @@
 <template>
-  <footer class="bg-gray-900 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <footer class="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Company Info -->
         <div class="lg:col-span-2">
-          <h3 class="text-2xl font-bold text-blue-400 mb-4">Kevser Abla Sürücü Kursu</h3>
+          <div class="flex items-center mb-4">
+            <div class="relative">
+              <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl blur-lg opacity-50"></div>
+              <div class="relative bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-bold">Kevser Rijschool</h3>
+              </div>
+            </div>
+          </div>
           <p class="text-gray-300 mb-6 leading-relaxed">
-            Hollanda'da 15 yıllık deneyimimizle araba ve motor direksiyon dersleri veriyoruz. 
-            Güvenli sürücü eğitimi ile sizi başarıya ulaştırıyoruz.
+            Met 15 jaar ervaring in Nederland geven wij autorijlessen en motorrijlessen. 
+            Wij brengen u naar succes met veilige rijopleiding.
           </p>
           <div class="flex space-x-4">
             <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
@@ -35,25 +48,25 @@
 
         <!-- Quick Links -->
         <div>
-          <h4 class="text-lg font-semibold mb-4">Hızlı Linkler</h4>
+          <h4 class="text-lg font-semibold mb-4">Snelle Links</h4>
           <ul class="space-y-2">
-            <li><a href="#home" class="text-gray-300 hover:text-blue-400 transition-colors">Ana Sayfa</a></li>
-            <li><a href="#services" class="text-gray-300 hover:text-blue-400 transition-colors">Hizmetlerimiz</a></li>
-            <li><a href="#instructors" class="text-gray-300 hover:text-blue-400 transition-colors">Eğitmenlerimiz</a></li>
-            <li><a href="#testimonials" class="text-gray-300 hover:text-blue-400 transition-colors">Referanslar</a></li>
-            <li><a href="#contact" class="text-gray-300 hover:text-blue-400 transition-colors">İletişim</a></li>
+            <li><a href="#home" class="text-gray-300 hover:text-blue-400 transition-colors">Home</a></li>
+            <li><a href="#services" class="text-gray-300 hover:text-blue-400 transition-colors">Diensten</a></li>
+            <li><a href="#instructors" class="text-gray-300 hover:text-blue-400 transition-colors">Instructeurs</a></li>
+            <li><a href="#testimonials" class="text-gray-300 hover:text-blue-400 transition-colors">Referenties</a></li>
+            <li><a href="#contact" class="text-gray-300 hover:text-blue-400 transition-colors">Contact</a></li>
           </ul>
         </div>
 
         <!-- Services -->
         <div>
-          <h4 class="text-lg font-semibold mb-4">Hizmetlerimiz</h4>
+          <h4 class="text-lg font-semibold mb-4">Onze Diensten</h4>
           <ul class="space-y-2">
-            <li><a href="#" class="text-gray-300 hover:text-blue-400 transition-colors">B Sınıfı Ehliyet</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-blue-400 transition-colors">A Sınıfı Ehliyet</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-blue-400 transition-colors">Teorik Dersler</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-blue-400 transition-colors">Pratik Dersler</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-blue-400 transition-colors">Sınav Hazırlığı</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-blue-400 transition-colors">B Rijbewijs</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-blue-400 transition-colors">A Rijbewijs</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-blue-400 transition-colors">Theorielessen</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-blue-400 transition-colors">Praktijklessen</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-blue-400 transition-colors">Examen Voorbereiding</a></li>
           </ul>
         </div>
       </div>
@@ -68,7 +81,7 @@
             </svg>
             <div>
               <p class="text-sm text-gray-400">Adres</p>
-              <p class="text-gray-300">Amsterdam, Hollanda</p>
+              <p class="text-gray-300">Rotterdam, Nederland</p>
             </div>
           </div>
           <div class="flex items-center">
@@ -76,7 +89,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
             <div>
-              <p class="text-sm text-gray-400">Telefon</p>
+              <p class="text-sm text-gray-400">Telefoon</p>
               <p class="text-gray-300">+31 6 1234 5678</p>
             </div>
           </div>
@@ -85,8 +98,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             <div>
-              <p class="text-sm text-gray-400">E-posta</p>
-              <p class="text-gray-300">info@kevserabla.nl</p>
+              <p class="text-sm text-gray-400">E-mail</p>
+              <p class="text-gray-300">info@kevser.nl</p>
             </div>
           </div>
         </div>
@@ -95,12 +108,12 @@
       <!-- Bottom Bar -->
       <div class="border-t border-gray-800 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
         <p class="text-gray-400 text-sm">
-          © 2024 Kevser Abla Sürücü Kursu. Tüm hakları saklıdır.
+          © 2025 Kevser Rijschool. Alle rechten voorbehouden.
         </p>
         <div class="flex space-x-6 mt-4 md:mt-0">
-          <a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Gizlilik Politikası</a>
-          <a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Kullanım Şartları</a>
-          <a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Çerez Politikası</a>
+          <a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Privacybeleid</a>
+          <a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Gebruiksvoorwaarden</a>
+          <a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Cookiebeleid</a>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@
 import Header from './components/Header.vue'
 import HeroSection from './components/HeroSection.vue'
 import ServicesSection from './components/ServicesSection.vue'
+import PricingSection from './components/PricingSection.vue'
 import InstructorsSection from './components/InstructorsSection.vue'
 import TestimonialsSection from './components/TestimonialsSection.vue'
 import ContactSection from './components/ContactSection.vue'
@@ -14,6 +15,7 @@ import Footer from './components/Footer.vue'
     <main>
       <HeroSection />
       <ServicesSection />
+      <PricingSection />
       <InstructorsSection />
       <TestimonialsSection />
       <ContactSection />

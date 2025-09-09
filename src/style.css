@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+/* Smooth scroll behavior */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Custom dot pattern for hero section */
+
+.bg-dot-pattern {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
