@@ -67,26 +67,26 @@
           }"
           class="testimonials-swiper"
         >
-          <!-- Testimonial 1 -->
-          <swiper-slide>
+          <!-- Testimonials Loop -->
+          <swiper-slide v-for="testimonial in testimonials" :key="testimonial.id">
             <div class="relative bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl p-8 hover:shadow-2xl transition-all duration-300 h-full border border-white/20 overflow-hidden group">
               <!-- Background Gradient -->
-              <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-600/5"></div>
-              <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-blue-600/10 rounded-full blur-2xl"></div>
+              <div class="absolute inset-0 bg-gradient-to-br from-slate-500/5 to-slate-600/5"></div>
+              <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-slate-400/10 to-slate-600/10 rounded-full blur-2xl"></div>
               
               <div class="relative z-10">
                 <div class="flex items-center mb-6">
                   <div class="relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
-                    <div class="relative w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-xl group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300" :class="`from-${testimonial.color}-500 to-${testimonial.color}-600`"></div>
+                    <div class="relative w-16 h-16 rounded-full flex items-center justify-center shadow-xl group-hover:scale-105 transition-transform duration-300" :class="`bg-gradient-to-r from-${testimonial.color}-500 to-${testimonial.color}-600`">
                       <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                       </svg>
                     </div>
                   </div>
                   <div class="ml-4">
-                    <h4 class="text-lg font-bold text-white">Ayşe Yılmaz</h4>
-                    <p class="text-gray-300">B Rijbewijs</p>
+                    <h4 class="text-lg font-bold text-white">{{ testimonial.name }}</h4>
+                    <p class="text-gray-300">{{ testimonial.license }}</p>
                   </div>
                 </div>
                 <div class="flex text-yellow-400 mb-4">
@@ -95,140 +95,9 @@
                   </svg>
                 </div>
                 <p class="text-gray-300 leading-relaxed">
-                  "Werken met Kevser Abla was een geweldige ervaring. Dankzij haar geduldige en begripvolle 
-                  aanpak heb ik mijn angsten overwonnen en succesvol mijn rijbewijs gehaald. Ik raad het iedereen aan!"
+                  "{{ testimonial.comment }}"
                 </p>
               </div>
-            </div>
-          </swiper-slide>
-
-          <!-- Testimonial 2 -->
-          <swiper-slide>
-            <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 h-full">
-              <div class="flex items-center mb-6">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mr-4">
-                  <svg class="h-8 w-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="text-lg font-semibold text-gray-900">Mehmet Kaya</h4>
-                  <p class="text-gray-600">A Rijbewijs</p>
-                </div>
-              </div>
-              <div class="flex text-yellow-400 mb-4">
-                <svg v-for="i in 5" :key="i" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              </div>
-              <p class="text-gray-700 leading-relaxed">
-                "Ik wilde mijn A-rijbewijs halen maar was erg bang. Dankzij de professionele 
-                aanpak van Ahmet heb ik veilig leren motorrijden. Bedankt!"
-              </p>
-            </div>
-          </swiper-slide>
-
-          <!-- Testimonial 3 -->
-          <swiper-slide>
-            <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 h-full">
-              <div class="flex items-center mb-6">
-                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-4">
-                  <svg class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="text-lg font-semibold text-gray-900">Fatma Demir</h4>
-                  <p class="text-gray-600">B Rijbewijs</p>
-                </div>
-              </div>
-              <div class="flex text-yellow-400 mb-4">
-                <svg v-for="i in 5" :key="i" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              </div>
-              <p class="text-gray-700 leading-relaxed">
-                "Dankzij flexibele tijden en individuele training kon ik mijn rijlessen 
-                gemakkelijk combineren met mijn werk. Ik ben erg tevreden, ik raad het iedereen aan."
-              </p>
-            </div>
-          </swiper-slide>
-
-          <!-- Testimonial 4 -->
-          <swiper-slide>
-            <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 h-full">
-              <div class="flex items-center mb-6">
-                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                  <svg class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="text-lg font-semibold text-gray-900">Ali Özkan</h4>
-                  <p class="text-gray-600">A Rijbewijs</p>
-                </div>
-              </div>
-              <div class="flex text-yellow-400 mb-4">
-                <svg v-for="i in 5" :key="i" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              </div>
-              <p class="text-gray-700 leading-relaxed">
-                "Training met moderne motoren maakt echt het verschil. De instructeurs zijn zeer 
-                professioneel en leren veilige rijtechnieken heel goed aan."
-              </p>
-            </div>
-          </swiper-slide>
-
-          <!-- Testimonial 5 -->
-          <swiper-slide>
-            <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 h-full">
-              <div class="flex items-center mb-6">
-                <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
-                  <svg class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="text-lg font-semibold text-gray-900">Zeynep Arslan</h4>
-                  <p class="text-gray-600">B Rijbewijs</p>
-                </div>
-              </div>
-              <div class="flex text-yellow-400 mb-4">
-                <svg v-for="i in 5" :key="i" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              </div>
-              <p class="text-gray-700 leading-relaxed">
-                "Ze hebben veel geholpen met examenvoorbereiding. Dankzij proefexamens en individuele 
-                coaching ben ik in de eerste keer geslaagd. Heel erg bedankt!"
-              </p>
-            </div>
-          </swiper-slide>
-
-          <!-- Testimonial 6 -->
-          <swiper-slide>
-            <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 h-full">
-              <div class="flex items-center mb-6">
-                <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
-                  <svg class="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="text-lg font-semibold text-gray-900">Can Yıldız</h4>
-                  <p class="text-gray-600">A Rijbewijs</p>
-                </div>
-              </div>
-              <div class="flex text-yellow-400 mb-4">
-                <svg v-for="i in 5" :key="i" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              </div>
-              <p class="text-gray-700 leading-relaxed">
-                "Ik dacht dat het halen van een rijbewijs in Nederland moeilijk was, maar met de juiste 
-                instructeur is het heel makkelijk. Dankzij Kevser Abla's cursus ben ik geslaagd voor zowel theorie als praktijk."
-              </p>
             </div>
           </swiper-slide>
         </swiper>
@@ -260,6 +129,58 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/autoplay'
 
 const modules = [Navigation, Pagination, EffectCoverflow, Autoplay]
+
+// Testimonial verileri
+const testimonials = [
+  {
+    id: 1,
+    name: "Ayşe Yılmaz",
+    license: "B Rijbewijs",
+    comment: "Werken met Kevser Abla was een geweldige ervaring. Dankzij haar geduldige en begripvolle aanpak heb ik mijn angsten overwonnen en succesvol mijn rijbewijs gehaald. Ik raad het iedereen aan!",
+    color: "blue",
+    gradient: "from-blue-500 to-blue-600"
+  },
+  {
+    id: 2,
+    name: "Mehmet Kaya",
+    license: "A Rijbewijs",
+    comment: "Ik wilde mijn A-rijbewijs halen maar was erg bang. Dankzij de professionele aanpak van Ahmet heb ik veilig leren motorrijden. Bedankt!",
+    color: "red",
+    gradient: "from-red-500 to-red-600"
+  },
+  {
+    id: 3,
+    name: "Fatma Demir",
+    license: "B Rijbewijs",
+    comment: "Dankzij flexibele tijden en individuele training kon ik mijn rijlessen gemakkelijk combineren met mijn werk. Ik ben erg tevreden, ik raad het iedereen aan.",
+    color: "green",
+    gradient: "from-green-500 to-green-600"
+  },
+  {
+    id: 4,
+    name: "Ali Özkan",
+    license: "A Rijbewijs",
+    comment: "Training met moderne motoren maakt echt het verschil. De instructeurs zijn zeer professioneel en leren veilige rijtechnieken heel goed aan.",
+    color: "purple",
+    gradient: "from-purple-500 to-purple-600"
+  },
+  {
+    id: 5,
+    name: "Zeynep Arslan",
+    license: "B Rijbewijs",
+    comment: "Ze hebben veel geholpen met examenvoorbereiding. Dankzij proefexamens en individuele coaching ben ik in de eerste keer geslaagd. Heel erg bedankt!",
+    color: "yellow",
+    gradient: "from-yellow-500 to-yellow-600"
+  },
+  {
+    id: 6,
+    name: "Can Yıldız",
+    license: "A Rijbewijs",
+    comment: "Ik dacht dat het halen van een rijbewijs in Nederland moeilijk was, maar met de juiste instructeur is het heel makkelijk. Dankzij Kevser Abla's cursus ben ik geslaagd voor zowel theorie als praktijk.",
+    color: "indigo",
+    gradient: "from-indigo-500 to-indigo-600"
+  }
+]
 </script>
 
 <style scoped>

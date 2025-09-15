@@ -448,15 +448,15 @@
 
         <!-- Custom Navigation Buttons -->
         <button
-          class="swiper-button-prev-custom absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 bg-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border-2 border-gray-100 hover:border-blue-300 group">
-          <svg class="w-6 h-6 text-gray-600 group-hover:text-blue-600 transition-colors duration-300" fill="none"
+          class="swiper-button-prev-custom absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-2 z-10 bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-all duration-300 group">
+          <svg class="w-4 h-4 text-white/80 group-hover:text-white transition-colors duration-300" fill="none"
             stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
           </svg>
         </button>
         <button
-          class="swiper-button-next-custom absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 bg-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border-2 border-gray-100 hover:border-blue-300 group">
-          <svg class="w-6 h-6 text-gray-600 group-hover:text-blue-600 transition-colors duration-300" fill="none"
+          class="swiper-button-next-custom absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-2 z-10 bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-all duration-300 group">
+          <svg class="w-4 h-4 text-white/80 group-hover:text-white transition-colors duration-300" fill="none"
             stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>
@@ -557,18 +557,25 @@ const modules = [Autoplay, Pagination, Navigation]
 /* Custom Navigation Buttons Styling */
 .swiper-button-prev-custom,
 .swiper-button-next-custom {
-  width: 56px;
-  height: 56px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
   border-radius: 50%;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid #f3f4f6;
+  transition: all 0.3s ease;
+  border: none;
+  opacity: 0.8;
 }
 
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  transform: scale(1.05);
+}
 
 .swiper-button-prev-custom:active,
 .swiper-button-next-custom:active {
@@ -580,23 +587,21 @@ const modules = [Autoplay, Pagination, Navigation]
   transition: all 0.3s ease;
 }
 
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
-
   .swiper-button-prev-custom,
   .swiper-button-next-custom {
-    width: 48px;
-    height: 48px;
-    padding: 12px;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
   }
 
   .swiper-button-prev-custom {
-    left: 8px;
+    left: 4px;
   }
 
   .swiper-button-next-custom {
-    right: 8px;
+    right: 4px;
   }
 }
 </style>
